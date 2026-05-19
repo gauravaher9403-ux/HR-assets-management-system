@@ -71,12 +71,12 @@ export const authService = {
   },
 
   // Listen to auth state changes (no-op)
-  onAuthStateChange(callback: (user: any) => void) {
+  onAuthStateChange(_callback: (user: any) => void) {
     // No-op
   },
 
   // Get user data (no-op)
-  async getUserData(uid: string): Promise<User | null> {
+  async getUserData(_uid: string): Promise<User | null> {
     // No-op
     return null;
   }
