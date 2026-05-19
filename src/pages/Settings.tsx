@@ -5,7 +5,9 @@ import { Input } from '../components/ui/Input';
 import { User, Shield, Bell, Database } from 'lucide-react';
 
 export default function Settings() {
-  const { currentUser, users } = useStore();
+  const { currentUser } = useStore();
+
+  const users: any[] = [];
   const [activeTab, setActiveTab] = useState('profile');
 
   const tabs = [
@@ -182,13 +184,13 @@ export default function Settings() {
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="text-2xl font-bold text-gray-900">
-                    {users.filter(u => u.role === 'admin').length}
+                    {users.filter((u: any) => u.role === 'admin').length}
                   </div>
                   <div className="text-sm text-gray-600">Administrators</div>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="text-2xl font-bold text-gray-900">
-                    {users.filter(u => u.role === 'hr').length}
+                    {users.filter((u: any) => u.role === 'hr').length}
                   </div>
                   <div className="text-sm text-gray-600">HR Users</div>
                 </div>
@@ -197,7 +199,7 @@ export default function Settings() {
               <div>
                 <h4 className="text-md font-medium text-gray-900 mb-4">User Management</h4>
                 <div className="space-y-2">
-                  {users.map((user) => (
+                  {users.map((user: any) => (
                     <div key={user.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                       <div>
                         <p className="font-medium text-gray-900">{user.username}</p>
